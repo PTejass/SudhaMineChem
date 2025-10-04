@@ -1,5 +1,5 @@
 import { businessData } from "@/data/business-data";
-import { Factory, MapPin, Phone, Mail, MessageCircle, Linkedin, Facebook, Instagram } from "lucide-react";
+import { Factory, MapPin, Phone, Mail, MessageCircle, PhoneCall, Clock } from "lucide-react";
 
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
@@ -33,15 +33,6 @@ export default function Footer() {
               {businessData.footer.description}
             </p>
             <div className="flex space-x-4">
-              <button className="bg-background/10 p-3 rounded-lg hover:bg-background/20 transition-colors" data-testid="button-linkedin">
-                <Linkedin className="text-xl" />
-              </button>
-              <button className="bg-background/10 p-3 rounded-lg hover:bg-background/20 transition-colors" data-testid="button-facebook">
-                <Facebook className="text-xl" />
-              </button>
-              <button className="bg-background/10 p-3 rounded-lg hover:bg-background/20 transition-colors" data-testid="button-instagram">
-                <Instagram className="text-xl" />
-              </button>
               <button 
                 onClick={handleWhatsApp}
                 className="bg-green-600 p-3 rounded-lg hover:bg-green-700 transition-colors"
@@ -49,6 +40,13 @@ export default function Footer() {
               >
                 <MessageCircle className="text-xl" />
               </button>
+              <a
+                href={`tel:${businessData.footer.phone}`}
+                className="bg-background/10 p-3 rounded-lg hover:bg-background/20 transition-colors"
+                data-testid="button-footer-call"
+              >
+                <PhoneCall className="text-xl" />
+              </a>
             </div>
           </div>
 
@@ -124,6 +122,12 @@ export default function Footer() {
                 <MessageCircle className="text-background/60" />
                 <p className="text-background/80 text-sm">{businessData.footer.whatsapp}</p>
               </div>
+              <div className="flex items-start space-x-3">
+                <Clock className="text-background/60 mt-1" />
+                <p className="text-background/80 text-sm whitespace-pre-line">
+                  {businessData.location.hours}
+                </p>
+              </div>
               <div className="flex items-center space-x-3">
                 <Mail className="text-background/60" />
                 <p className="text-background/80 text-sm">{businessData.footer.email}</p>
@@ -137,17 +141,9 @@ export default function Footer() {
             <p className="text-background/60 text-sm">
               {businessData.footer.copyright}
             </p>
-            <div className="flex space-x-6 text-sm">
-              <button className="text-background/60 hover:text-background transition-colors" data-testid="button-privacy">
-                Privacy Policy
-              </button>
-              <button className="text-background/60 hover:text-background transition-colors" data-testid="button-terms">
-                Terms of Service
-              </button>
-              <button className="text-background/60 hover:text-background transition-colors" data-testid="button-sitemap">
-                Sitemap
-              </button>
-            </div>
+            <p className="text-background/60 text-sm text-center md:text-right max-w-xl">
+              We are committed to delivering reliable industrial solutions with integrity and customer-first service. For any queries, please reach out via phone, email, or WhatsApp.
+            </p>
           </div>
         </div>
       </div>

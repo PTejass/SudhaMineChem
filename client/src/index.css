@@ -3,25 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(210, 40%, 96%);
-  --foreground: hsl(220, 16%, 22%);
+  /* Industrial neutral palette with deep blue accents */
+  --background: hsl(220, 14%, 96%); /* light steel */
+  --foreground: hsl(221, 25%, 16%); /* charcoal */
   --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(220, 16%, 22%);
+  --card-foreground: hsl(221, 25%, 16%);
   --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(220, 16%, 22%);
-  --primary: hsl(217, 91%, 60%);
+  --popover-foreground: hsl(221, 25%, 16%);
+  --primary: hsl(220, 83%, 56%); /* deep blue */
   --primary-foreground: hsl(0, 0%, 98%);
-  --secondary: hsl(214, 32%, 91%);
-  --secondary-foreground: hsl(220, 16%, 36%);
-  --muted: hsl(214, 32%, 91%);
-  --muted-foreground: hsl(220, 13%, 46%);
-  --accent: hsl(212, 100%, 50%);
+  --secondary: hsl(220, 14%, 92%);
+  --secondary-foreground: hsl(221, 25%, 20%);
+  --muted: hsl(220, 14%, 92%);
+  --muted-foreground: hsl(221, 12%, 40%);
+  --accent: hsl(201, 96%, 32%); /* optional deep green-blue */
   --accent-foreground: hsl(0, 0%, 98%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 98%);
-  --border: hsl(214, 32%, 87%);
-  --input: hsl(214, 32%, 87%);
-  --ring: hsl(217, 91%, 60%);
+  --border: hsl(220, 14%, 85%);
+  --input: hsl(220, 14%, 85%);
+  --ring: hsl(220, 83%, 56%);
   --chart-1: hsl(217, 91%, 60%);
   --chart-2: hsl(159, 100%, 36%);
   --chart-3: hsl(42, 93%, 56%);
@@ -52,25 +53,25 @@
 }
 
 .dark {
-  --background: hsl(0, 0%, 0%);
-  --foreground: hsl(200, 7%, 91%);
-  --card: hsl(228, 10%, 10%);
-  --card-foreground: hsl(0, 0%, 85%);
-  --popover: hsl(0, 0%, 0%);
-  --popover-foreground: hsl(200, 7%, 91%);
-  --primary: hsl(217, 91%, 60%);
+  --background: hsl(220, 18%, 9%); /* near-black charcoal */
+  --foreground: hsl(220, 9%, 92%);
+  --card: hsl(220, 14%, 12%);
+  --card-foreground: hsl(220, 9%, 92%);
+  --popover: hsl(220, 14%, 12%);
+  --popover-foreground: hsl(220, 9%, 92%);
+  --primary: hsl(220, 83%, 56%);
   --primary-foreground: hsl(0, 0%, 98%);
-  --secondary: hsl(195, 15%, 95%);
-  --secondary-foreground: hsl(220, 16%, 22%);
-  --muted: hsl(0, 0%, 9%);
-  --muted-foreground: hsl(210, 3%, 46%);
-  --accent: hsl(212, 100%, 50%);
+  --secondary: hsl(220, 14%, 16%);
+  --secondary-foreground: hsl(220, 9%, 92%);
+  --muted: hsl(220, 14%, 12%);
+  --muted-foreground: hsl(220, 5%, 54%);
+  --accent: hsl(201, 96%, 32%);
   --accent-foreground: hsl(0, 0%, 98%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 98%);
-  --border: hsl(210, 5%, 15%);
-  --input: hsl(208, 28%, 18%);
-  --ring: hsl(217, 91%, 60%);
+  --border: hsl(220, 14%, 18%);
+  --input: hsl(220, 14%, 18%);
+  --ring: hsl(220, 83%, 56%);
   --chart-1: hsl(217, 91%, 60%);
   --chart-2: hsl(159, 100%, 36%);
   --chart-3: hsl(42, 93%, 56%);
@@ -92,7 +93,7 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-background text-foreground tracking-normal;
   }
 }
 
@@ -126,5 +127,49 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Subtle slide and scale reveal for formal interactions */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px) scale(0.995);
+  will-change: opacity, transform;
+  transition-property: opacity, transform;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Variants for subtle staggering */
+.reveal-delay-1 { transition-delay: 80ms; }
+.reveal-delay-2 { transition-delay: 160ms; }
+.reveal-delay-3 { transition-delay: 240ms; }
+.reveal-delay-4 { transition-delay: 320ms; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .fade-in,
+  .fade-in-up {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

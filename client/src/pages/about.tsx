@@ -36,14 +36,14 @@ export default function About() {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-accent/10">
+      <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-accent/10 border-b border-border/60 dark:border-border/40">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto reveal">
             <h1 className="text-5xl lg:text-6xl font-bold text-foreground mb-6">
               About <span className="text-primary">{businessData.company.name}</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Pioneering industrial manufacturing excellence for over 25 years with cutting-edge technology, 
+              Pioneering industrial manufacturing excellence for over 15 years with cutting-edge technology, 
               unwavering quality standards, and a commitment to innovation.
             </p>
           </div>
@@ -51,36 +51,32 @@ export default function About() {
       </section>
 
       {/* Company Overview */}
-      <section className="py-20">
+      <section className="py-20 border-t border-border/60 dark:border-border/40">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-foreground mb-6">Our Manufacturing Excellence</h2>
+            <div className="reveal">
+              <h2 className="text-4xl font-bold text-foreground mb-6">{businessData.about.company.title}</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                 {businessData.about.company.description}
               </p>
               
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-6 bg-card rounded-lg border">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div className="text-center p-6 bg-card rounded-lg border reveal reveal-delay-1">
                   <div className="text-3xl font-bold text-primary mb-2">{businessData.stats.experience}</div>
                   <div className="text-sm text-muted-foreground">Years Experience</div>
                 </div>
-                <div className="text-center p-6 bg-card rounded-lg border">
+                <div className="text-center p-6 bg-card rounded-lg border reveal reveal-delay-2">
                   <div className="text-3xl font-bold text-primary mb-2">{businessData.stats.products}</div>
                   <div className="text-sm text-muted-foreground">Products</div>
                 </div>
-                <div className="text-center p-6 bg-card rounded-lg border">
+                <div className="text-center p-6 bg-card rounded-lg border reveal reveal-delay-3">
                   <div className="text-3xl font-bold text-primary mb-2">{businessData.stats.clients}</div>
                   <div className="text-sm text-muted-foreground">Happy Clients</div>
-                </div>
-                <div className="text-center p-6 bg-card rounded-lg border">
-                  <div className="text-3xl font-bold text-primary mb-2">50+</div>
-                  <div className="text-sm text-muted-foreground">Countries Served</div>
                 </div>
               </div>
             </div>
             
-            <div>
+            <div className="reveal reveal-delay-2">
               <img 
                 src="https://pixabay.com/get/g1fb25c170a600a1c5ab6c4256d8aeaf66b4bbef151d9bfed51136fed2a315963d93b8ef7a69b92c839ab23eaa50f98658a3d767bde383126c0cace0e6ec49166_1280.jpg"
                 alt="Manufacturing facility" 
@@ -92,9 +88,9 @@ export default function About() {
       </section>
 
       {/* Our Values */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-muted/30 border-t border-border/60 dark:border-border/40">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 reveal">
             <h2 className="text-4xl font-bold text-foreground mb-6">Our Core Values</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               The principles that guide our operations and define our commitment to excellence.
@@ -102,7 +98,7 @@ export default function About() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center hover-lift">
+            <Card className="text-center hover-lift reveal reveal-delay-1">
               <CardHeader>
                 <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Target className="h-8 w-8 text-primary" />
@@ -116,7 +112,7 @@ export default function About() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover-lift">
+            <Card className="text-center hover-lift reveal reveal-delay-2">
               <CardHeader>
                 <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Users className="h-8 w-8 text-primary" />
@@ -130,7 +126,7 @@ export default function About() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover-lift">
+            <Card className="text-center hover-lift reveal reveal-delay-3">
               <CardHeader>
                 <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Building className="h-8 w-8 text-primary" />
@@ -144,7 +140,7 @@ export default function About() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover-lift">
+            <Card className="text-center hover-lift reveal reveal-delay-4">
               <CardHeader>
                 <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Shield className="h-8 w-8 text-primary" />
@@ -236,12 +232,12 @@ export default function About() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/#contact">
-              <Button size="lg" variant="secondary" className="px-8" data-testid="button-get-quote-cta">
+              <Button size="lg" variant="secondary" className="px-8 hover-lift transition-transform duration-300 reveal reveal-delay-1" data-testid="button-get-quote-cta">
                 Get a Quote
               </Button>
             </Link>
             <Link href="/#products">
-              <Button size="lg" variant="outline" className="px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" data-testid="button-view-products-cta">
+              <Button size="lg" variant="secondary" className="px-8 bg-primary-foreground text-primary border-none hover:bg-primary-foreground/90 hover-lift transition-transform duration-300 reveal reveal-delay-2" data-testid="button-view-products-cta">
                 View Products
               </Button>
             </Link>

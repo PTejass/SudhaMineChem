@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 
+// Declare google namespace for TypeScript
+declare const google: any;
+
 interface GoogleMapsProps {
   latitude: number;
   longitude: number;
@@ -36,20 +39,55 @@ const render = (status: Status) => {
     );
   }
 
-  return null;
+  return <></>;
 };
 
 function MapComponent({ latitude, longitude, zoom = 15 }: { latitude: number; longitude: number; zoom?: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [map, setMap] = useState<google.maps.Map>();
+  const [map, setMap] = useState<any>();
 
   useEffect(() => {
-    if (ref.current && !map) {
-      const newMap = new window.google.maps.Map(ref.current, {
+    if (ref.current && !map && typeof google !== "undefined") {
+      const newMap = new google.maps.Map(ref.current, {
         center: { lat: latitude, lng: longitude },
         zoom: zoom,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         styles: [
+          // Global desaturation for a grayscale, professional look
+          {
+            elementType: "geometry",
+            stylers: [{ saturation: -100 }, { lightness: 10 }],
+          },
+          {
+            elementType: "labels.icon",
+            stylers: [{ visibility: "off" }],
+          },
+          {
+            elementType: "labels.text.fill",
+            stylers: [{ color: "#9aa0a6" }],
+          },
+          {
+            elementType: "labels.text.stroke",
+            stylers: [{ color: "#1f2937" }],
+          },
+          // Roads subtle contrast
+          {
+            featureType: "road",
+            elementType: "geometry",
+            stylers: [{ color: "#2a2f36" }],
+          },
+          {
+            featureType: "road",
+            elementType: "geometry.stroke",
+            stylers: [{ color: "#1f242b" }],
+          },
+          // Water toned down
+          {
+            featureType: "water",
+            elementType: "geometry",
+            stylers: [{ color: "#1e242b" }],
+          },
+          // Hide POI labels
           {
             featureType: "poi",
             elementType: "labels",
@@ -145,8 +183,6 @@ export default function GoogleMaps({
     );
   }
 
-  // Debug: Log the API key to console
-  console.log('Google Maps API Key:', apiKey);
 
   // If no API key is provided, show a placeholder with instructions
   if (!apiKey || apiKey === 'your_google_maps_api_key_here') {

@@ -1,11 +1,11 @@
 import { businessData } from "@/data/business-data";
-import { Award } from "lucide-react";
+import { Award, Clock } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-20 bg-background border-t border-border/60 dark:border-border/40">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 fade-in reveal">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">About Our Company</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             With decades of experience in industrial manufacturing, we've built our reputation on quality, reliability, and innovation.
@@ -13,7 +13,7 @@ export default function AboutSection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="order-2 lg:order-1">
+          <div className="order-2 lg:order-1 reveal reveal-delay-2">
             <img 
               src="https://pixabay.com/get/g1fb25c170a600a1c5ab6c4256d8aeaf66b4bbef151d9bfed51136fed2a315963d93b8ef7a69b92c839ab23eaa50f98658a3d767bde383126c0cace0e6ec49166_1280.jpg"
               alt="Modern industrial manufacturing facility" 
@@ -21,7 +21,7 @@ export default function AboutSection() {
             />
           </div>
           
-          <div className="order-1 lg:order-2">
+          <div className="order-1 lg:order-2 reveal">
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">
@@ -30,6 +30,13 @@ export default function AboutSection() {
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   {businessData.about.company.description}
                 </p>
+                <div className="mt-4 flex items-start space-x-3">
+                  <Clock className="text-primary h-5 w-5 mt-0.5" />
+                  <div>
+                    <div className="text-sm font-semibold text-foreground">Available Hours</div>
+                    <p className="text-sm text-muted-foreground whitespace-pre-line">{businessData.location.hours}</p>
+                  </div>
+                </div>
               </div>
 
               <div>

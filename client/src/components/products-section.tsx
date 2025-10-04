@@ -30,9 +30,9 @@ export default function ProductsSection() {
   };
 
   return (
-    <section id="products" className="py-20 bg-muted/30">
+    <section id="products" className="py-20 bg-muted/30 border-t border-border/60 dark:border-border/40">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 fade-in reveal">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">Our Product Range</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Discover our comprehensive range of high-quality industrial products. Contact us for detailed specifications and current pricing.
@@ -43,13 +43,13 @@ export default function ProductsSection() {
           {displayedProducts.map((product) => (
             <div 
               key={product.id} 
-              className="bg-card rounded-xl overflow-hidden shadow-lg hover-lift border border-border"
+              className="bg-card rounded-xl overflow-hidden shadow-sm border border-border hover:border-primary/30 hover:shadow-md transition-colors transition-shadow reveal reveal-delay-1"
             >
               <div className="relative w-full aspect-[4/3] overflow-hidden">
                 <img 
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105" 
+                  className="w-full h-full object-cover object-center"
                   loading="lazy"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;

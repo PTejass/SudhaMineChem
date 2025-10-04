@@ -45,9 +45,9 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-muted/30">
+    <section id="contact" className="py-20 bg-muted/30 border-t border-border/60 dark:border-border/40">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">Get In Touch</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Ready to discuss your industrial requirements? Contact us for personalized quotes and technical consultation.
@@ -111,7 +111,7 @@ export default function ContactSection() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-card p-8 rounded-xl shadow-lg border border-border">
+          <div className="bg-card p-8 rounded-xl shadow-lg border border-border reveal reveal-delay-2">
             <h3 className="text-xl font-bold text-card-foreground mb-6">Send us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">

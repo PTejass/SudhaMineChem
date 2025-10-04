@@ -3,18 +3,18 @@ export const businessData = {
     name: "SUDHA MINECHEM INDUSTRIES",
     tagline: "Industrial Solutions",
     description:
-      "Leading provider of high-quality industrial manufacturing solutions with over 25 years of experience. We deliver excellence in every product and service we provide.",
+      "Leading provider of high-quality industrial manufacturing solutions with over 15 years of experience. We deliver excellence in every product and service we provide.",
   },
   hero: {
-    title: "Leading Industrial Manufacturing Solutions",
+    title: "Leading Manufacturing Solutions",
     description:
-      "Delivering high-quality industrial products and manufacturing solutions with cutting-edge technology and decades of expertise. Your trusted partner for all manufacturing needs.",
+      "We offer dependable solutions aligned to diverse requirements, focusing on quality, consistency, and long-term relationships.",
   },
   about: {
     company: {
-      title: "Our Manufacturing Excellence",
+      title: "Advanced Mineral & Chemical Processing",
       description:
-        "Established in 2008, we have been at the forefront of industrial manufacturing, providing high-quality products and solutions to businesses worldwide. Our state-of-the-art facilities and experienced team ensure that every product meets the highest standards of quality and reliability.",
+        "Established in 2008, we specialize in advanced processing of minerals and chemicals, delivering consistent quality and tailored specifications to meet diverse industrial needs. Our modern facilities and expert team ensure every batch meets stringent performance and reliability standards.",
     },
     statutory: {
       title: "Business Statutory Details",
@@ -38,7 +38,7 @@ export const businessData = {
   stats: {
     experience: "17+",
     products: "15+",
-    clients: "1000+",
+    clients: "100+",
   },
   products: [
     {
@@ -102,7 +102,7 @@ export const businessData = {
         "High-grade Ashapura bentonite powder for drilling, foundry, and industrial applications.",
       category: "Clay Products",
       image:
-        "https://5.imimg.com/data5/SELLER/Default/2023/11/358003747/HH/EM/HE/63375125/ashapura-ultrabond-sodium-based-bentonite-powder.jpg",
+        "https://5.imimg.com/data5/SELLER/Default/2025/1/483998311/EQ/BD/NO/18586544/bentonite-powder-ashapura.jpg",
     },
     {
       id: 8,
@@ -138,7 +138,7 @@ export const businessData = {
         "High-grade zinc sulphate 21% for agricultural fertilizers and industrial processes.",
       category: "Chemical Compounds",
       image:
-        "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-yeMWrDtZwcc1RZTRfdJNzbsICVF9gUG0tg&s",
     },
     {
       id: 12,
@@ -147,7 +147,7 @@ export const businessData = {
         "Pure zinc sulphate monohydrate for pharmaceutical and agricultural applications.",
       category: "Chemical Compounds",
       image:
-        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+        "https://m.media-amazon.com/images/I/51qFpRMhPaL._UF1000,1000_QL80_.jpg",
     },
     {
       id: 13,
@@ -156,7 +156,7 @@ export const businessData = {
         "High purity ferrous sulphate heptahydrate for water treatment and agricultural use.",
       category: "Chemical Compounds",
       image:
-        "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+        "https://2.wlimg.com/product_images/bc-full/2024/5/13319980/ferrous-sulphate-heptahydrate-crystal-1715919714-7422731.jpeg",
     },
     {
       id: 14,
@@ -210,7 +210,7 @@ export const businessData = {
         "High-quality di calcium phosphate for animal feed and pharmaceutical applications.",
       category: "Chemical Compounds",
       image:
-        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+        "https://5.imimg.com/data5/SELLER/Default/2023/10/350367768/CC/SP/CE/40702712/di-calcium-phosphate-powder.jpg",
     },
     {
       id: 20,
@@ -219,46 +219,29 @@ export const businessData = {
         "Pure pharmaceutical grade dextrose for medical and food industry applications.",
       category: "Food Grade",
       image:
-        "https://images.unsplash.com/photo-1587049352846-4a222e784d38?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+        "https://tcbrewing.com/wp-content/uploads/2021/07/Dextrose.jpg",
     },
     {
       id: 21,
-      name: "Cholone Chloride 60%",
+      name: "Cholone Chloride 60/80/90%",
       description:
         "High concentration cholone chloride 60% for industrial and pharmaceutical use.",
       category: "Chemical Compounds",
       image:
-        "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+        "https://5.imimg.com/data5/SELLER/Default/2022/12/HN/FZ/CZ/75432279/choline-chloride-60-corn-cob-base-cereal-base.jpg",
     },
+    
     {
-    id: 22,
-      name: "Choline Chloride 80% (Corn Based)",
-      description:
-        "Corn-based choline chloride 80% for animal nutrition and feed applications.",
-      category: "Feed Additives",
-      image:
-        "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    },
-    {
-      id: 23,
-      name: "Choline Chloride 90%",
-      description:
-        "High concentration choline chloride 90% for specialized industrial applications.",
-      category: "Chemical Compounds",
-      image:
-        "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
-    },
-    {
-      id: 24,
+      id: 22,
       name: "Hydrated Lime",
       description:
         "Premium hydrated lime for construction, water treatment, and industrial processes.",
       category: "Construction Materials",
       image:
-        "https://images.unsplash.com/photo-1504180676286-9a2c2d90fa7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+        "https://www.jodhpurlimeindustries.com/storage/2024/09/Hydrated-Lime-1.webp",
     },
     {
-      id: 25,
+      id: 23,
       name: "Wheat Bran",
       description:
         "High-quality wheat bran for animal feed and agricultural applications.",
@@ -267,7 +250,7 @@ export const businessData = {
         "https://nuttyyogi.com/cdn/shop/products/Wheatbran.jpg?v=1680765174",
     },
     {
-      id: 26,
+      id: 24,
       name: "Rice Bran",
       description:
         "Premium rice bran for animal nutrition and feed formulations.",
@@ -276,16 +259,16 @@ export const businessData = {
         "https://img.wattagnet.com/files/base/wattglobalmedia/all/image/2023/05/an.rice-grain-closeup.jpg?auto=format%2Ccompress&fit=max&q=70&w=1200",
     },
     {
-      id: 27,
+      id: 25,
       name: "Potassium Iodine",
       description:
         "High purity potassium iodine for pharmaceutical and industrial applications.",
       category: "Chemical Compounds",
       image:
-        "https://images.unsplash.com/photo-1518152006812-edab29b069ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+        "https://thumbs.dreamstime.com/b/sodium-iodide-chemical-compound-used-radiation-detection-prevention-treatment-iodine-deficiency-macro-275328819.jpg",
     },
     {
-      id: 28,
+      id: 26,
       name: "Maize Starch",
       description:
         "Food grade maize starch for food processing and industrial applications.",
@@ -294,25 +277,25 @@ export const businessData = {
         "https://www.sukhjitgroup.com/assets/uploads/files/products/5fafd-maize_starch.jpg",
     },
     {
-      id: 29,
+      id: 27,
       name: "Boran 20%",
       description:
         "High concentration boran 20% for specialized industrial and agricultural use.",
       category: "Chemical Compounds",
       image:
-        "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+        "https://www.farmigoagrotech.com/images/farmigo/Boron.jpg",
     },
     {
-      id: 30,
+      id: 28,
       name: "Borax 10.5%",
       description:
         "Premium borax 10.5% for glass manufacturing and industrial applications.",
       category: "Chemical Compounds",
       image:
-        "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+        "https://www.siddhiagrochemicals.com/wp-content/uploads/2021/07/borax-1.jpg",
     },
     {
-      id: 31,
+      id: 29,
       name: "Phospho Gypsum",
       description:
         "High-quality phospho gypsum for construction and agricultural applications.",
@@ -321,7 +304,7 @@ export const businessData = {
         "https://d2cbg94ubxgsnp.cloudfront.net/Pictures/1024x536/8/2/3/501823_gypsum_raw_purified_387280.jpg",
     },
     {
-      id: 32,
+      id: 30,
       name: "Copper Sulphate",
       description:
         "Pure copper sulphate for agriculture, water treatment, and industrial processes.",
@@ -339,7 +322,7 @@ export const businessData = {
       longitude: 77.52486004558446,
     },
     hours:
-      "Monday - Friday: 9:00 AM - 6:00 PM\nSaturday: 9:00 AM - 2:00 PM\nSunday: Closed",
+      "Monday - Saturday: 9:00 AM - 5:00 PM\nSunday: Closed",
     phones:
         "Primary: +91 72040 33767\nSecondary: +91 98452 48123\nWhatsApp: +91 72040 33767",
   },
@@ -357,7 +340,7 @@ export const businessData = {
       tagline: "Industrial Solutions",
     },
     description:
-      "Leading provider of high-quality industrial manufacturing solutions with over 25 years of experience. We deliver excellence in every product and service we provide.",
+      "Leading provider of high-quality industrial manufacturing solutions with over 15 years of experience. We deliver excellence in every product and service we provide.",
     address:
       "Sudha Minechem Industries,\n201, 12th Main, 3rd Phase,\nPeenya, Bengaluru,\nKarnataka 560058, India",
     phone: "+91 72040 33767",

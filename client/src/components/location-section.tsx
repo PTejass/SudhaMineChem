@@ -4,9 +4,9 @@ import GoogleMaps from "./google-maps";
 
 export default function LocationSection() {
   return (
-    <section id="location" className="py-20 bg-background">
+    <section id="location" className="py-20 bg-background border-t border-border/60 dark:border-border/40">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">Our Location</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Visit our state-of-the-art manufacturing facility and experience our commitment to quality firsthand.
@@ -14,7 +14,7 @@ export default function LocationSection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
+          <div className="space-y-8 reveal">
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-6">
                 {businessData.location.title}
@@ -60,14 +60,13 @@ export default function LocationSection() {
             </div>
           </div>
 
-          {/* {console.log('Environment API Key:', import.meta.env.VITE_GOOGLE_MAPS_API_KEY)} */}
           <GoogleMaps
             latitude={businessData.location.coordinates.latitude}
             longitude={businessData.location.coordinates.longitude}
             height="400px"
             zoom={15}
             className="shadow-lg"
-            apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "AIzaSyAFqQgP3QrecJLC8Yi0ql_eOjMshF48GfA"}
+            apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
           />
         </div>
       </div>
