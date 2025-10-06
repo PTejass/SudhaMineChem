@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { businessData } from "@/data/business-data";
 import { MessageCircle, ChevronDown, ChevronUp } from "lucide-react";
 import { getQuoteWhatsAppMessage, openWhatsApp } from "@/lib/whatsapp";
@@ -16,7 +16,28 @@ const categoryIcons: Record<string, string> = {
 
 export default function ProductsSection() {
   const [showAll, setShowAll] = useState(false);
-  const displayedProducts = showAll ? businessData.products : businessData.products.slice(0, 9);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+
+  const categories = useMemo(() => {
+    const set = new Set<string>(["All"]);
+    businessData.products.forEach((p) => set.add(p.category));
+    return Array.from(set);
+  }, []);
+
+  const filteredProducts = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+    return businessData.products.filter((product) => {
+      const matchesQuery = !query
+        || product.name.toLowerCase().includes(query)
+        || product.description.toLowerCase().includes(query)
+        || product.category.toLowerCase().includes(query);
+      const matchesCategory = selectedCategory === "All" || product.category === selectedCategory;
+      return matchesQuery && matchesCategory;
+    });
+  }, [searchQuery, selectedCategory]);
+
+  const displayedProducts = showAll ? filteredProducts : filteredProducts.slice(0, 9);
   const handleGetQuote = (productName: string) => {
     const message = getQuoteWhatsAppMessage(productName);
     openWhatsApp(businessData.contact.whatsapp, message);
@@ -37,6 +58,32 @@ export default function ProductsSection() {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Discover our comprehensive range of high-quality industrial products. Contact us for detailed specifications and current pricing.
           </p>
+        </div>
+
+        {/* Search and Filters */}
+        <div className="mb-8 grid grid-cols-1 md:grid-cols-3 gap-4 reveal">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => {
+              setShowAll(false);
+              setSearchQuery(e.target.value);
+            }}
+            placeholder="Search products, categories…"
+            className="md:col-span-2 w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+          />
+          <select
+            value={selectedCategory}
+            onChange={(e) => {
+              setShowAll(false);
+              setSelectedCategory(e.target.value);
+            }}
+            className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+          >
+            {categories.map((cat) => (
+              <option key={cat} value={cat}>{cat}</option>
+            ))}
+          </select>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -85,10 +132,12 @@ export default function ProductsSection() {
 
         <div className="text-center mt-12">
           <p className="text-lg text-muted-foreground mb-6">
-            Prices vary based on specifications and market conditions. Contact us for current pricing and detailed quotations.
+            {filteredProducts.length === 0
+              ? "No products match your search. Try changing your filters."
+              : "Prices vary based on specifications and market conditions. Contact us for current pricing and detailed quotations."}
           </p>
           
-          {businessData.products.length > 9 && (
+          {filteredProducts.length > 9 && (
             <div className="mb-6">
               <button
                 onClick={() => setShowAll(!showAll)}
@@ -103,7 +152,7 @@ export default function ProductsSection() {
                 ) : (
                   <>
                     <ChevronDown className="mr-2 h-5 w-5" />
-                    Show More Products ({businessData.products.length - 9} more)
+                    Show More Products ({Math.max(filteredProducts.length - 9, 0)} more)
                   </>
                 )}
               </button>
