@@ -67,6 +67,7 @@ export default function LocationSection() {
             zoom={15}
             className="shadow-lg"
             apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}
+            forceEmbed={true}
           />
         </div>
       </div>

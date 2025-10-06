@@ -11,6 +11,7 @@ interface GoogleMapsProps {
   height?: string;
   className?: string;
   apiKey?: string;
+  forceEmbed?: boolean;
 }
 
 const render = (status: Status) => {
@@ -162,6 +163,7 @@ export default function GoogleMaps({
   height = "400px",
   className = "",
   apiKey,
+  forceEmbed,
 }: GoogleMapsProps) {
   const [isClient, setIsClient] = useState(false);
 
@@ -184,23 +186,20 @@ export default function GoogleMaps({
   }
 
 
-  // If no API key is provided, show a placeholder with instructions
-  if (!apiKey || apiKey === 'your_google_maps_api_key_here') {
+  // If embed mode is forced or no API key provided, render iframe-based Google Maps (no warning popup)
+  if (forceEmbed || !apiKey || apiKey === 'your_google_maps_api_key_here') {
+    const embedUrl = `https://www.google.com/maps?q=${latitude},${longitude}&z=${zoom}&output=embed`;
     return (
-      <div 
-        className={`bg-muted/50 rounded-xl flex items-center justify-center border border-border ${className}`}
-        style={{ height }}
-      >
-        <div className="text-center p-6">
-          <div className="text-4xl mb-4">🗺️</div>
-          <h3 className="text-lg font-semibold mb-2">Google Maps Integration</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            To enable Google Maps, add your API key to the environment variables
-          </p>
-          <div className="bg-gray-100 p-3 rounded text-xs font-mono text-left">
-            <div>VITE_GOOGLE_MAPS_API_KEY=your_api_key_here</div>
-          </div>
-        </div>
+      <div className={`rounded-xl overflow-hidden border border-border ${className}`} style={{ height }}>
+        <iframe
+          title="Google Maps"
+          src={embedUrl}
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </div>
     );
   }
