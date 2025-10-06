@@ -102,7 +102,14 @@
 }
 
 .hero-bg {
-  background-image: url('https://pixabay.com/get/g608f0760d002bec9177f926f83840f8155d7b1a65f014619d5290cdbf44c15913757bc2bdafb86c8a18b20ed1c3901670d7cc5d9ae3b01cac1784a8dfeeecfdb_1280.jpg');
+  background-image: url('./photos/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.about-bg {
+  background-image: url('./photos/about.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

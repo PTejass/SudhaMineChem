@@ -36,13 +36,14 @@ export default function About() {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 via-background to-accent/10 border-b border-border/60 dark:border-border/40">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="py-20 about-bg relative border-b border-border/60 dark:border-border/40">
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto reveal">
             <h1 className="text-5xl lg:text-6xl font-bold text-foreground mb-6">
               About <span className="text-primary">{businessData.company.name}</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-xl text-white/90 leading-relaxed">
               Pioneering industrial manufacturing excellence for over 15 years with cutting-edge technology, 
               unwavering quality standards, and a commitment to innovation.
             </p>
@@ -78,7 +79,7 @@ export default function About() {
             
             <div className="reveal reveal-delay-2">
               <img 
-                src="https://pixabay.com/get/g1fb25c170a600a1c5ab6c4256d8aeaf66b4bbef151d9bfed51136fed2a315963d93b8ef7a69b92c839ab23eaa50f98658a3d767bde383126c0cace0e6ec49166_1280.jpg"
+                src={new URL("../photos/aboutpg.jpg", import.meta.url).toString()}
                 alt="Manufacturing facility" 
                 className="rounded-xl shadow-2xl w-full h-auto" 
               />

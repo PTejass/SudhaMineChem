@@ -15,7 +15,7 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1 reveal reveal-delay-2">
             <img 
-              src="https://pixabay.com/get/g1fb25c170a600a1c5ab6c4256d8aeaf66b4bbef151d9bfed51136fed2a315963d93b8ef7a69b92c839ab23eaa50f98658a3d767bde383126c0cace0e6ec49166_1280.jpg"
+              src={new URL("../photos/about.jpg", import.meta.url).toString()}
               alt="Modern industrial manufacturing facility" 
               className="rounded-xl shadow-2xl w-full h-auto hover-lift" 
             />
