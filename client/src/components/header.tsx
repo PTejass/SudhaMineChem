@@ -42,8 +42,12 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo and Business Name Section */}
           <Link href="/" className="flex items-center space-x-4" data-testid="link-home">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
-              <Factory className="text-primary-foreground text-xl" />
+            <div className="w-12 h-12 rounded-lg overflow-hidden bg-transparent flex items-center justify-center">
+              <img
+                src={new URL("../photos/logo.jpg", import.meta.url).toString()}
+                alt={`${businessData.company.name} logo`}
+                className="w-12 h-12 object-contain"
+              />
             </div>
             <div>
               <h1 className="text-xl font-bold text-foreground">

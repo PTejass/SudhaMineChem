@@ -69,3 +69,18 @@ if (document.readyState === "complete" || document.readyState === "interactive")
 }
 
 createRoot(document.getElementById("root")!).render(<App />);
+
+// Set favicon from bundled logo
+(() => {
+  try {
+    const href = new URL("./photos/logo.jpg", import.meta.url).toString();
+    let link = document.querySelector<HTMLLinkElement>('link[rel="icon"]');
+    if (!link) {
+      link = document.createElement("link");
+      link.rel = "icon";
+      document.head.appendChild(link);
+    }
+    link.type = "image/jpeg";
+    link.href = href;
+  } catch {}
+})();

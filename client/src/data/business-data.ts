@@ -322,7 +322,7 @@ export const businessData = {
       longitude: 77.52486004558446,
     },
     hours:
-      "Monday - Saturday: 9:00 AM - 5:00 PM\nSunday: Closed",
+      "Monday - Saturday: 9:00 AM - 6:00 PM\nSunday: Closed",
     phones:
         "Primary: +91 72040 33767\nSecondary: +91 98452 48123\nWhatsApp: +91 72040 33767",
   },
