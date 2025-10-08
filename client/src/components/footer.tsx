@@ -114,9 +114,12 @@ export default function Footer() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="text-background/60" />
-                <p className="text-background/80 text-sm">{businessData.footer.phone}</p>
+              <div className="flex items-start space-x-3">
+                <Phone className="text-background/60 mt-1" />
+                <div>
+                  <p className="text-background/80 text-sm">Primary: {businessData.footer.phone}</p>
+                  <p className="text-background/80 text-sm">Secondary: {businessData.footer.secondaryPhone}</p>
+                </div>
               </div>
               <div className="flex items-center space-x-3">
                 <MessageCircle className="text-background/60" />

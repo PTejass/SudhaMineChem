@@ -170,12 +170,12 @@ export default function About() {
               {businessData.about.licenses.title}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our commitment to compliance and quality is demonstrated through our comprehensive certifications and licenses.
+              Our commitment to quality is demonstrated through our comprehensive certifications and licenses.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-8">
+          <div className="flex justify-center">
+            <Card className="p-8 w-full max-w-2xl">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
                   <Award className="h-6 w-6 text-primary" />
@@ -190,35 +190,6 @@ export default function About() {
                       <span className="text-muted-foreground">{license}</span>
                     </li>
                   ))}
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="p-8">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Shield className="h-6 w-6 text-primary" />
-                  Compliance Standards
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-4">
-                  <li className="flex items-center gap-3">
-                    <Shield className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-muted-foreground">Environmental Management ISO 14001</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Shield className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-muted-foreground">Occupational Health & Safety ISO 45001</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Shield className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-muted-foreground">FDA Compliance for Medical Devices</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <Shield className="h-5 w-5 text-primary flex-shrink-0" />
-                    <span className="text-muted-foreground">CE Marking for European Markets</span>
-                  </li>
                 </ul>
               </CardContent>
             </Card>

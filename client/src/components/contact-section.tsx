@@ -92,8 +92,11 @@ export default function ContactSection() {
                   <Phone className="text-primary text-2xl" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground">Phone Number</h4>
-                  <p className="text-muted-foreground">{businessData.contact.phone}</p>
+                  <h4 className="font-semibold text-foreground">Phone Numbers</h4>
+                  <p className="text-muted-foreground">
+                    Primary: {businessData.contact.phone}<br />
+                    Secondary: {businessData.contact.secondaryPhone}
+                  </p>
                 </div>
               </div>
             </div>

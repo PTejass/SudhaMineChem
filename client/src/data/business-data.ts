@@ -333,6 +333,7 @@ export const businessData = {
     whatsapp: "+91 72040 33767",
     email: "info@sudhaminechem.com",
     phone: "+91 72040 33767",
+    secondaryPhone: "+91 98452 48123",
   },
   footer: {
     company: {
@@ -344,6 +345,7 @@ export const businessData = {
     address:
       "Sudha Minechem Industries,\n201, 12th Main, 3rd Phase,\nPeenya, Bengaluru,\nKarnataka 560058, India",
     phone: "+91 72040 33767",
+    secondaryPhone: "+91 98452 48123",
     whatsapp: "+91 72040 33767",
     email: "info@sudhaminechem.com",
     copyright: "© 2024 Sudha Minechem Industries. All rights reserved.",
