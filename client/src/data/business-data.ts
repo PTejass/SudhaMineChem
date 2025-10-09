@@ -14,12 +14,12 @@ export const businessData = {
     company: {
       title: "Advanced Mineral & Chemical Processing",
       description:
-        "Established in 2008, we specialize in advanced processing of minerals and chemicals, delivering consistent quality and tailored specifications to meet diverse industrial needs. Our modern facilities and expert team ensure every batch meets stringent performance and reliability standards.",
+        "Established in 1978, we specialize in advanced processing of minerals and chemicals, delivering consistent quality and tailored specifications to meet diverse industrial needs. Our modern facilities and expert team ensure every batch meets stringent performance and reliability standards.",
     },
     statutory: {
       title: "Business Statutory Details",
       details: {
-        yearOfEstablishment: 2008,
+        yearOfEstablishment: 1978,
         gstin: "29ADMPJ3739Q1ZN",
         modeOfPayment:
           "Visa / Master Card / Rupay, American Express, Cheque / Demand Draft, Cash",
@@ -28,7 +28,6 @@ export const businessData = {
     licenses: {
       title: "Import Licenses & Certifications",
       list: [
-        "ISO 9001:2015 Quality Management",
         "Import Export License No: IEC0123456789",
         "GST Registration: 29ADMPJ3739Q1ZN",
         "Industrial License: IL-2024-0789",
@@ -36,7 +35,7 @@ export const businessData = {
     },
   },
   stats: {
-    experience: "17+",
+    experience: "40+",
     products: "15+",
     clients: "100+",
   },
